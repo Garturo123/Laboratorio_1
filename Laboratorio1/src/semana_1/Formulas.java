@@ -119,7 +119,7 @@ public class Formulas {
         System.out.print("Denominador 1: "); Double d1j = scanner.nextDouble();
         System.out.print("Numerador 2: "); Double n2j = scanner.nextDouble();
         
-        Double operacion_j = ((n1j*aj)+bj)/(cj-((dj+n2j*ej)/fj+(gj/(d1j*hj))));
+        Double operacion_j = ((n1j*aj)+bj)/(cj-((dj+n2j*ej)/(fj+(gj/(d1j*hj)))));
         var resultado_j_s = String.format("El resultado es: %.1f", operacion_j); System.out.println(resultado_j_s);
 
         System.out.println("Ejercicio k");
