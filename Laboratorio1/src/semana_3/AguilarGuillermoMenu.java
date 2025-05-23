@@ -59,7 +59,7 @@ public class AguilarGuillermoMenu {
                 String perfect = " no es ";
                 for (int i=0;num>i;i++){
                     if (((Math.pow(2, i)-1)%2)==1){
-                        var perfecto = Math.pow(2, i-1) * (Math.pow(2, i)-1);
+                        double perfecto = Math.pow(2, i-1) * (Math.pow(2, i)-1);
                         if (num == perfecto){
                         perfect= " es ";
                         }
@@ -85,7 +85,7 @@ public class AguilarGuillermoMenu {
                  break;
                  
              case 4://Votaciones
-                 Votaciones += 1;
+                Votaciones += 1;
                 System.out.print("\nEscriba el numero de votantes: ");
                 int votantes = scan.nextInt();
                 double porcent = 100/votantes, indice=0;
