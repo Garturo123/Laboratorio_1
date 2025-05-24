@@ -20,7 +20,7 @@ public class Menu {
 
             int opcion = scan.nextInt();
             switch (opcion){
-                case 1: //Piramide de numeros primos
+                case 1: //Piramide de numeros impares
                     System.out.print("Cantidad de la fila de la piramide: ");
                     int fila = scan.nextInt();
                     int num = 1;
@@ -176,7 +176,7 @@ public class Menu {
                         }
                     }
                     break;
-                case 5:
+                case 5: //Salir
                     System.out.println("Apagando sistema...");
                     salir = true;
                     break;
