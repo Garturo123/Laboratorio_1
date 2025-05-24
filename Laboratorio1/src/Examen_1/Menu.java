@@ -13,6 +13,9 @@ public class Menu {
             System.out.println("\n===MENU=== ");
             System.out.println("1. Piramide");
             System.out.println("2. Cifrar palabras");
+            System.out.println("3. Papel, tijeras o piedra");
+            System.out.println("4. Adivinar numeros");
+            System.out.println("5. Salir");
             System.out.print("Selecione una opcion: ");
 
             int opcion = scan.nextInt();
@@ -37,7 +40,7 @@ public class Menu {
                     }
                     System.out.print(piramide);
                 break;
-                case 2:
+                case 2://encriptar
                     boolean Continuar = true;
                     
                     String alfabeto = "abcdefghijklmnopqrstuvwxyz";
@@ -101,20 +104,66 @@ public class Menu {
                                 System.out.println("No existe esta opcion. ");
                             break;
                         }
-                    }
-                            
+                    }    
                 break;
+                case 3: // tijera, papel o piedra
+                    System.out.println("Bienvenido usuario, este es el juego del papel, piedra y tijera.");
+                    boolean continuar = true;
+                    while (continuar){
+                        int min = 1, max = 3;
+                        int range = max - min + 1;
+                        int random = (int)(Math.random() * range) + min;
+                        String Compu = "";
+                        String continuacion = "";
+                        String jugador = "";
+                        switch (random){
+                            case 1:
+                                Compu = "papel";
+                            break;
+                            case 2:
+                                Compu = "tijera";
+                            break;
+                            case 3:
+                                Compu = "piedra";
+                            break;
+                        }
+                        while (!jugador.equals("tijeras") && !jugador.equals("papel") && !jugador.equals("piedra")){
+                            System.out.println("Escoja entre papel, tijeras y piedra.");
+                            jugador = scan.next().toLowerCase();
+
+                            if (Compu.equals("tijeras") && jugador.equals("papel") || Compu.equals("piedra") && jugador.equals("tijera") || Compu.equals("papel") && jugador.equals("piedra")){
+                                System.out.println("Victoria de la computadora.");
+                            }else if(Compu.equals(jugador)){
+                                System.out.println("Empate de computadora y jugador");
+                            }else if(Compu.equals("papel") && jugador.equals("tijeras") || Compu.equals("tijera") && jugador.equals("piedra") || Compu.equals("piedra") && jugador.equals("papel")){
+                                System.out.println("Victoria del jugador.");
+                            }else{
+                                System.out.println("Vuelva a escoger");
+                            }   
+                        }
+                            while (!continuacion.equals("si") && !continuacion.equals("no")){
+                                System.out.println("Volver a jugar. si/no");
+                                continuacion = scan.next().toLowerCase();
+                                if (continuacion.equals("si")){
+                                    continuar = true;
+                                }else if (continuacion.equals("no")){
+                                    continuar = false;
+                                }else{
+                                    System.out.println("Vuelve a intentar.");
+                                }
+                            }
+                    }
+                break;
+               
                 case 5:
-                    System.out.print("Apagando sistema...");
+                    System.out.println("Apagando sistema...");
                     salir = true;
+                    break;
+                default:
+                    System.out.println("Vuelva a intentar.");
+                    break;
             }
         
         }
-        
-        
-        
-        
-        
-        
     }
 }
