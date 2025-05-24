@@ -154,7 +154,28 @@ public class Menu {
                             }
                     }
                 break;
-               
+                case 4: // Adivina Numeros
+                    int intentos = 0;
+                    int min = 1, max = 100;
+                    int range = max - min + 1; 
+                    int random = (int)(Math.random() * range) + min;
+                    for (int i = 10; i >= 0; i--){
+                        intentos++;
+                        System.out.println("Adivine un numero entre el 1 y el 100");
+                        int jugador = scan.nextInt();
+                        if (random > jugador){
+                            System.out.println("El numero aleatorio es mayor.");
+                        }else if (random < jugador){
+                            System.out.println("El numero aleatorio es menor.");
+                        }else if(i == 0){
+                            System.out.println("El numero aleatorio es: " + random);
+                        }else{
+                            System.out.println("Adivinastes el numero! ");
+                            System.out.println("Numero de intentos: "+ intentos);
+                            i = -1;
+                        }
+                    }
+                    break;
                 case 5:
                     System.out.println("Apagando sistema...");
                     salir = true;
