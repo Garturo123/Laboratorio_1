@@ -19,8 +19,8 @@ public class AguilarGuillermoJuego extends JFrame {
 
         // Palabras iniciales
         palabras = new ArrayList<>(Arrays.asList(
-                "HONDURAS", "JAVA", "TECNOLOGIA", "LENGUAJE", "COMPUTADORA",
-                "SOFTWARE", "HARDWARE", "PROYECTO", "DESARROLLO", "EDUCACION"
+                "SANDIA", "MANZANA", "TECNOLOGIA", "CLASE", "ESTRES",
+                "SOFTWARE", "TAREA", "PROYECTO", "CARRO", "HAMBRE"
         ));
 
         // Paneles y navegación
