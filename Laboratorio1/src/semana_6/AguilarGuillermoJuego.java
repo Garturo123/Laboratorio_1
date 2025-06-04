@@ -14,28 +14,23 @@ public class AguilarGuillermoJuego extends JFrame {
                 frame.setSize(600, 400);
                 frame.setLocationRelativeTo(null);
 
-                // Palabras iniciales
                 ArrayList<String> palabras = new ArrayList<>(Arrays.asList(
                         "SANDIA", "MANZANA", "TECNOLOGIA", "CLASE", "ESTRES",
                         "SOFTWARE", "TAREA", "PROYECTO", "CARRO", "HAMBRE"
                 ));
 
-                // Paneles y navegación
                 CardLayout cardLayout = new CardLayout();
                 JPanel mainPanel = new JPanel(cardLayout);
 
-                // Usar arreglos para las variables que necesitamos modificar
                 final String[] palabraActual = {""};
                 final String[] palabraOculta = {""};
                 final int[] oportunidades = {5};
 
-                // Crear componentes
                 JLabel palabraLabel = new JLabel("", SwingConstants.CENTER);
                 JLabel oportunidadesLabel = new JLabel("Oportunidades: 5", SwingConstants.CENTER);
                 JLabel mensajeLabel = new JLabel("", SwingConstants.CENTER);
                 JTextField letraField = new JTextField(1);
 
-                // Crear panel de menú principal
                 JPanel menuPanel = new JPanel();
                 menuPanel.setLayout(new GridLayout(3, 1, 10, 10));
                 JButton jugarBtn = new JButton("Jugar");
@@ -78,7 +73,7 @@ public class AguilarGuillermoJuego extends JFrame {
                 menuPanel.add(cambiarBtn);
                 menuPanel.add(salirBtn);
 
-                // Crear panel de juego
+                // Panel de juego
                 JPanel juegoPanel = new JPanel();
                 juegoPanel.setLayout(new BorderLayout(10, 10));
                 
@@ -138,7 +133,7 @@ public class AguilarGuillermoJuego extends JFrame {
                 juegoPanel.add(centroJuego, BorderLayout.CENTER);
                 juegoPanel.add(volverBtnJuego, BorderLayout.SOUTH);
 
-                // Crear panel de palabras
+                // Panel de palabras
                 JPanel palabrasPanel = new JPanel();
                 palabrasPanel.setLayout(new BorderLayout(10, 10));
                 
