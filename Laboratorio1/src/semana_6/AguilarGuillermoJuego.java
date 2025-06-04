@@ -4,16 +4,15 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-public class AguilarGuillermoJuego extends JFrame {
+public class AguilarGuillermoJuego {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // Crear la ventana principal
                 JFrame frame = new JFrame("Juego Ahorcado Express");
-                frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(600, 400);
                 frame.setLocationRelativeTo(null);
-
+                
                 ArrayList<String> palabras = new ArrayList<>(Arrays.asList(
                         "SANDIA", "MANZANA", "TECNOLOGIA", "CLASE", "ESTRES",
                         "SOFTWARE", "TAREA", "PROYECTO", "CARRO", "HAMBRE"
@@ -73,7 +72,6 @@ public class AguilarGuillermoJuego extends JFrame {
                 menuPanel.add(cambiarBtn);
                 menuPanel.add(salirBtn);
 
-                // Panel de juego
                 JPanel juegoPanel = new JPanel();
                 juegoPanel.setLayout(new BorderLayout(10, 10));
                 
@@ -133,7 +131,6 @@ public class AguilarGuillermoJuego extends JFrame {
                 juegoPanel.add(centroJuego, BorderLayout.CENTER);
                 juegoPanel.add(volverBtnJuego, BorderLayout.SOUTH);
 
-                // Panel de palabras
                 JPanel palabrasPanel = new JPanel();
                 palabrasPanel.setLayout(new BorderLayout(10, 10));
                 
@@ -174,7 +171,6 @@ public class AguilarGuillermoJuego extends JFrame {
                 palabrasPanel.add(new JScrollPane(listaPalabras), BorderLayout.CENTER);
                 palabrasPanel.add(abajoPalabras, BorderLayout.SOUTH);
 
-                // Actualizar lista de palabras inicial
                 modeloLista.clear();
                 for (String palabra : palabras) {
                     modeloLista.addElement(palabra);
