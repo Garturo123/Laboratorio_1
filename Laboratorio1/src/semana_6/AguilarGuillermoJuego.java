@@ -8,6 +8,7 @@ public class AguilarGuillermoJuego {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+
                 JFrame frame = new JFrame("Juego Ahorcado Express");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(600, 400);
@@ -32,11 +33,11 @@ public class AguilarGuillermoJuego {
 
                 JPanel menuPanel = new JPanel();
                 menuPanel.setLayout(new GridLayout(3, 1, 10, 10));
-                JButton jugarBtn = new JButton("Jugar");
-                JButton cambiarBtn = new JButton("Cambiar Palabras");
-                JButton salirBtn = new JButton("Salir");
+                JButton jugar= new JButton("Jugar");
+                JButton cambiar = new JButton("Cambiar Palabras");
+                JButton salir= new JButton("Salir");
                 
-                jugarBtn.addActionListener(new ActionListener() {
+                jugar.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         palabraActual[0] = palabras.get(new Random().nextInt(palabras.size()));
                         palabraOculta[0] = "";
@@ -51,7 +52,7 @@ public class AguilarGuillermoJuego {
                     }
                 });
                 
-                cambiarBtn.addActionListener(new ActionListener() {
+                cambiar.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         DefaultListModel<String> modeloLista = (DefaultListModel<String>) ((JList<String>)((JScrollPane)((JPanel)mainPanel.getComponent(2)).getComponent(0)).getViewport().getView()).getModel();
                         modeloLista.clear();
@@ -62,15 +63,15 @@ public class AguilarGuillermoJuego {
                     }
                 });
                 
-                salirBtn.addActionListener(new ActionListener() {
+                salir.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         System.exit(0);
                     }
                 });
                 
-                menuPanel.add(jugarBtn);
-                menuPanel.add(cambiarBtn);
-                menuPanel.add(salirBtn);
+                menuPanel.add(jugar);
+                menuPanel.add(cambiar);
+                menuPanel.add(salir);
 
                 JPanel juegoPanel = new JPanel();
                 juegoPanel.setLayout(new BorderLayout(10, 10));
@@ -116,8 +117,8 @@ public class AguilarGuillermoJuego {
                     }
                 });
                 
-                JButton volverBtnJuego = new JButton("Volver al Menú");
-                volverBtnJuego.addActionListener(new ActionListener() {
+                JButton volverJuego = new JButton("Volver al Menú");
+                volverJuego.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         cardLayout.show(mainPanel, "Menu");
                     }
@@ -129,7 +130,7 @@ public class AguilarGuillermoJuego {
                 centroJuego.add(letraField);
                 centroJuego.add(mensajeLabel);
                 juegoPanel.add(centroJuego, BorderLayout.CENTER);
-                juegoPanel.add(volverBtnJuego, BorderLayout.SOUTH);
+                juegoPanel.add(volverJuego, BorderLayout.SOUTH);
 
                 JPanel palabrasPanel = new JPanel();
                 palabrasPanel.setLayout(new BorderLayout(10, 10));
@@ -138,8 +139,8 @@ public class AguilarGuillermoJuego {
                 JList<String> listaPalabras = new JList<>(modeloLista);
                 JTextField nuevaPalabra = new JTextField();
                 
-                JButton agregarBtn = new JButton("Reemplazar palabra seleccionada");
-                agregarBtn.addActionListener(new ActionListener() {
+                JButton agrega = new JButton("Reemplazar palabra seleccionada");
+                agrega.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         int index = listaPalabras.getSelectedIndex();
                         String nueva = nuevaPalabra.getText().trim().toUpperCase();
@@ -157,8 +158,8 @@ public class AguilarGuillermoJuego {
                     }
                 });
                 
-                JButton volverBtnPalabras = new JButton("Volver al Menú");
-                volverBtnPalabras.addActionListener(new ActionListener() {
+                JButton volverPalabras = new JButton("Volver al Menú");
+                volverPalabras.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         cardLayout.show(mainPanel, "Menu");
                     }
@@ -166,8 +167,8 @@ public class AguilarGuillermoJuego {
                 
                 JPanel abajoPalabras = new JPanel(new GridLayout(3, 1));
                 abajoPalabras.add(nuevaPalabra);
-                abajoPalabras.add(agregarBtn);
-                abajoPalabras.add(volverBtnPalabras);
+                abajoPalabras.add(agrega);
+                abajoPalabras.add(volverPalabras);
                 palabrasPanel.add(new JScrollPane(listaPalabras), BorderLayout.CENTER);
                 palabrasPanel.add(abajoPalabras, BorderLayout.SOUTH);
 
